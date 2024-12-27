@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
   menuItems.forEach(function(item) {
       item.addEventListener('click', function() {
           var menu = document.querySelector('.navbar-collapse');
-          menu.style.collapse = 'none';
+          menu.style.collapse = 'collapse';
       });
   });
 });
