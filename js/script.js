@@ -144,9 +144,3 @@ mybutton.addEventListener("click",function(){
 });
 
 
-let links = document.querySelectorAll('.nav-menu');
-links.forEach(link => { 
-  link.addEventListener("click", () => { 
-    document.querySelector('.nav-menu').collapse = false
-  })
-})
