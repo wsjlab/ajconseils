@@ -144,11 +144,9 @@ mybutton.addEventListener("click",function(){
 });
 
 
-document.addEventListener('DOMContentLoaded', function() { 
-  var menuItems = document.querySelectorAll('.nav-link'); 
-  menuItems.forEach(function(item) { 
-    item.addEventListener('click', function() { 
-      var menu = document.querySelector('.navbar-collapse'); 
-      menu.style.display = 'none'; }); 
-    }); 
-  });
+let links = document.querySelectorAll('.nav-menu');
+links.forEach(link => { 
+  link.addEventListener("click", () => { 
+    document.querySelector('.nav-menu').collapse = false
+  })
+})
