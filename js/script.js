@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var menuItems = document.querySelectorAll('.nav-item');
   menuItems.forEach(function(item) {
       item.addEventListener('click', function() {
-          var menu = document.querySelector('.nav-menu');
+          var menu = document.querySelector('.navbar-collapse');
           menu.style.collapse = 'none';
       });
   });
