@@ -60,6 +60,7 @@ body{
     width: fit-content;
     margin-top: 1rem;
     font-size: 1.2rem;
+    justify-content: start;
 }
 .h-btn:hover{
     background: #6f34fe;
