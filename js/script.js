@@ -1,147 +1,81 @@
-// htmlcss progress circular bar 
-let htmlProgress = document.querySelector(".html-css"),
-  htmlValue = document.querySelector(".html-progress");
+/*========== menu icon navbar ==========*/
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
-let htmlStartValue = 0,
-  htmlEndValue = 90,
-  htmlspeed = 30;
-
-let progresshtml = setInterval(() => {
-  htmlStartValue++;
-
-  htmlValue.textContent = `${htmlStartValue}%`;
-  htmlProgress.style.background = `conic-gradient(#fca61f ${
-    htmlStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (htmlStartValue == htmlEndValue) {
-    clearInterval(progresshtml);
-  }
-}, htmlspeed);
-
-// javasript progress circular bar 
-let javascriptProgress = document.querySelector(".javascript"),
-  javascriptValue = document.querySelector(".javascript-progress");
-
-let javascriptStartValue = 0,
-  javascriptEndValue = 75,
-  jsspeed = 30;
-
-let progressjs = setInterval(() => {
-  javascriptStartValue++;
-
-  javascriptValue.textContent = `${javascriptStartValue}%`;
-  javascriptProgress.style.background = `conic-gradient(#7d2ae8 ${
-    javascriptStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (javascriptStartValue == javascriptEndValue) {
-    clearInterval(progressjs);
-  }
-}, jsspeed);
-
-// php progress circular bar 
-let phpProgress = document.querySelector(".php"),
-  phpValue = document.querySelector(".php-progress");
-
-let phpStartValue = 0,
-  phpEndValue = 80,
-  phpspeed = 30;
-
-let progressphp = setInterval(() => {
-  phpStartValue++;
-
-  phpValue.textContent = `${phpStartValue}%`;
-  phpProgress.style.background = `conic-gradient(#20c997 ${
-    phpStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (phpStartValue == phpEndValue) {
-    clearInterval(progressphp);
-  }
-}, phpspeed);
-
-// reactjs progress circular bar 
-let reactProgress = document.querySelector(".reactjs"),
-  reactValue = document.querySelector(".reactjs-progress");
-
-let reactStartValue = 0,
-  reactEndValue = 30,
-  rjsspeed = 30;
-
-let progressreact = setInterval(() => {
-  reactStartValue++;
-
-  reactValue.textContent = `${reactStartValue}%`;
-  reactProgress.style.background = `conic-gradient(#3f396d ${
-    reactStartValue * 3.6
-  }deg, #ededed 0deg)`;
-
-  if (reactStartValue == reactEndValue) {
-    clearInterval(progressreact);
-  }
-}, rjsspeed);
-
-
-// filter using javascript
-$(document).ready(function () {
-  $(".filter-item").click(function () {
-    const value = $(this).attr("data-filter");
-    if (value == "all") {
-      $(".post").show("1000");
-    } else {
-      $(".post")
-        .not("." + value)
-        .hide("1000");
-      $(".post")
-        .filter("." + value)
-        .show("1000");
-    }
-  });
-});
-
-
-// javascript for sticky navbar even if u scroll the navbar will be fixed
-document.addEventListener("DOMContentLoaded", function(){
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        document.getElementById('navbar-top').classList.add('fixed-top');
-        // add padding top to show content behind navbar
-        navbar_height = document.querySelector('.navbar').offsetHeight;
-        document.body.style.paddingTop = navbar_height + 'px';
-      } else {
-        document.getElementById('navbar-top').classList.remove('fixed-top');
-         // remove padding top from body
-        document.body.style.paddingTop = '0';
-      } 
-  });
-}); 
-
-
-// adding funtionality to back to top button 
-
-//Get the button
-let mybutton = document.getElementById("btn-back-to-top");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
 };
-function scrollFunction() {
-  if (
-    document.body.scrollTop > 20 ||
-    document.documentElement.scrollTop > 20
-  ) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-// When the user clicks on the button, scroll to the top of the document
-mybutton.addEventListener("click",function(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+
+
+/*========== scroll sections active link ==========*/
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+        };
+    });
+
+
+/*========== sticky navbar ==========*/
+let header = document.querySelector('.header');
+
+header.classList.toggle('sticky', window.scrollY > 100);
+
+
+/*========== remove menu icon navbar when click navbar link (scroll) ==========*/
+menuIcon.classList.remove('bx-x');
+navbar.classList.remove('active');
+
+};
+
+
+/*========== swiper ==========*/
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 50,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
 });
 
 
+/*========== dark light mode ==========*/
+let darkModeIcon = document.querySelector('#darkMode-icon');
 
+darkModeIcon.onclick = () => {
+    darkModeIcon.classList.toggle('bx-sun');
+    document.body.classList.toggle('dark-mode');
+};
+
+
+/*========== scroll reveal ==========*/
+ScrollReveal({
+    // reset: true,
+    distance: '80px',
+    duration: 2000,
+    delay: 200
+});
+
+ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .contact form', { origin: 'bottom' });
+ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
+ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });
