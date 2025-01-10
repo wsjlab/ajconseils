@@ -193,6 +193,11 @@ section {
     border-color: var(--main-color);
 }
 
+.phone-symbol::before {
+    content: "\260E"; /* Unicode for ☎ */
+}
+
+
 .home .profession-container {
     position: absolute;
     top: 50%;
