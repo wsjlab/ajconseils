@@ -140,8 +140,9 @@ section {
 }
 
 .home-content img {
-    width: 14rem;
-    height: 14rem;
+    width: 140rem;
+    height: 140rem;
+    align-items:center;
     object-fit: cover;
     border-radius: 50%;
     border: .5rem solid var(--bg-color);
