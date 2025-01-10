@@ -813,6 +813,10 @@ span {
         margin: 2.5rem .75rem 3rem;
     }
 
+    .phone-symbol::before {
+        content: "\260E"; /* Unicode for ☎ */
+    }
+
     .home .profession-container {
         left: 0;
         width: 100%;
