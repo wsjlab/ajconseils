@@ -140,10 +140,6 @@ section {
 }
 
 .home-content img {
-    position: relative;
-    bottom: 0;
-    right: 40px;
-    pointer-events: none;
     max-width: 480px;
     max-height: 100vh;
     border-radius: 50%;
