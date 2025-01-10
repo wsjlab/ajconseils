@@ -140,7 +140,7 @@ section {
 }
 
 .home-content img {
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 40px;
     pointer-events: none;
