@@ -121,7 +121,7 @@ section {
 .home {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .home .home-content {
@@ -301,7 +301,7 @@ section {
     right: 40px;
     pointer-events: none;
     max-width: 480px;
-    max-height: 100vh;
+    max-height: 480px;
 }
 
 span {
@@ -785,7 +785,7 @@ span {
     }
 
     .home {
-        padding: 0 3% 23rem;
+        padding: 50px 3% 23rem;
         justify-content: center;
         text-align: center;
     }
@@ -794,8 +794,8 @@ span {
         font-size: 2.6rem;
     }
     .home-content img {
-        max-width: 50px;
-        max-height: 50vh;
+        max-width: 70px;
+        max-height: 70vh;
         border-radius: 50%;
         border: .5rem solid var(--bg-color);
         outline: .5rem solid var(--main-color);
