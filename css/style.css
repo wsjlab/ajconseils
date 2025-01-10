@@ -140,8 +140,8 @@ section {
 }
 
 .home-content img {
-    max-width: 480px;
-    max-height: 100vh;
+    max-width: 180px;
+    max-height: 50vh;
     border-radius: 50%;
     border: .5rem solid var(--bg-color);
     outline: .5rem solid var(--main-color);
@@ -503,12 +503,12 @@ span {
 }
 
 .testimonial-slide img {
-    width: 14rem;
-    height: 14rem;
+    width: 140rem;
+    height: 140rem;
     object-fit: cover;
-    /*border-radius: 50%;
+    border-radius: 50%;
     border: .5rem solid var(--bg-color);
-    outline: .5rem solid var(--main-color);*/
+    outline: .5rem solid var(--main-color);
 }
 
 .testimonial-slide h3 {
